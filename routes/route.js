@@ -9,7 +9,7 @@ dataRoute.post('/register',(req,res)=>{
             responseDesc : 'Please select captcha'
         })
     }
-    var secretKey = ""
+    var secretKey = "__enter your secret key__"
     var verificationUrl = "https://www.google.com/recaptcha/api/siteverify?secret=" + secretKey + "&response=" + req.body['g-recaptcha-response'] + "&remoteip=" + req.connection.remoteAddress
     request(verificationUrl,(err, response, body)=>{
         body = JSON.parse(body)
